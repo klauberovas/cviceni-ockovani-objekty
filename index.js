@@ -45,17 +45,28 @@ document.body.innerHTML +=
 // Vytvořte novou stránku, nebo pokračujte ve stránce z předchozí lekce pro registraci na očkování.
 // Nejdříve nechte uživatele zadat všechny hodnoty, tedy jméno, věk i heslo. Uložte si je do dobře pojmenovaných proměnných.
 // Napište první podmínku, ve které zkontrolujte, že věk uživatele je větší nebo roven 65. Pokud ano, vypište do stránky „věk v pořádku“. Pokud uživateli není alespoň 65 let, vypište „nízký věk“.
-if (person.age < 65) {
-  document.body.innerHTML += '<p>Nízký věk pro očkování.</p>';
-} else {
-  if (person.age >= 65) {
-    document.body.innerHTML += '<p>Věk je v pořádku.</p>';
-    if (person.password.length > 8) {
-      document.body.innerHTML += '<p>Heslo je v pořádku.';
-    } else {
-      document.body.innerHTML += '<p>Slabé heslo!';
-    }
-  }
-}
-
 // Napište druhou podmínku, která zkontroluje, zda je zadané heslo delší než osm znaků. Pokud není, vypište „slabé heslo“. Heslo se bude kontrolovat pouze v případě, kdy uživatel splnil první podmínku (věk alespoň 65 let).
+
+// if (person.age < 65) {
+//   document.body.innerHTML += '<p>Nízký věk pro očkování.</p>';
+// } else {
+//   if (person.age >= 65) {
+//     document.body.innerHTML += '<p>Věk je v pořádku.</p>';
+//     if (person.password.length > 8) {
+//       document.body.innerHTML += '<p>Heslo je v pořádku.';
+//     } else {
+//       document.body.innerHTML += '<p>Slabé heslo!';
+//     }
+//   }
+// }
+
+if (person.age >= 65) {
+  document.body.innerHTML += '<p>Věk je v pořádku.</p>';
+  if (person.password.length <= 8) {
+    document.body.innerHTML += '<p>Slabé heslo</p>';
+  } else {
+    document.body.innerHTML += '<p>Heslo v pořádku.</p>';
+  }
+} else {
+  document.body.innerHTML += '<p>Nízký věk.</p>';
+}
